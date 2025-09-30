@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# CHI 2026 Smart Glass Workshop Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the official website for the CHI 2026 Smart Glass Workshop. Built with React, TypeScript, and Vite, and deployed via GitHub Pages.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
+- Node.js (version 18 or higher)
+- npm or yarn package manager
 
-## React Compiler
+### Installation & Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/smartglasschi2026/smartglasschi2026.github.io.git
+   cd smartglasschi2026.github.io
+   ```
 
-## Expanding the ESLint configuration
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+   The website will be available at `http://localhost:5173`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+5. **Preview production build**
+   ```bash
+   npm run preview
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
+
+```
+src/
+├── App.tsx          # Main application component
+├── App.css          # Application styles
+├── main.tsx         # Application entry point
+├── index.css        # Global styles
+└── assets/          # Static assets (images, icons, etc.)
+
+public/              # Public assets (copied to dist/)
+dist/                # Production build output (auto-generated)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build production-ready files
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint to check code quality
+- `npm run deploy` - Build and deploy to GitHub Pages
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Deployment
+
+The website is automatically deployed to GitHub Pages when you push to the `main` branch. The deployment process:
+
+1. Builds the production files using `vite build`
+2. Deploys the `dist/` folder to the `gh-pages` branch
+3. GitHub Pages serves the website from the `gh-pages` branch
+
+### Manual Deployment
+If you need to deploy manually:
+```bash
+npm run deploy
 ```
+
+## 🎨 Customization
+
+### Updating Content
+- **Main content**: Edit `src/App.tsx` to modify the website content
+- **Organizers**: Update the `organizers` array in `src/App.tsx` to add/edit organizer information
+- **Styling**: Update `src/App.css` for custom styles
+- **Global styles**: Modify `src/index.css` for site-wide styling
+
+### Adding/Editing Organizers
+To update organizer information:
+1. Open `src/App.tsx`
+2. Find the `organizers` array (around line 4-29)
+3. Update the organizer objects with:
+   - `name`: Full name of the organizer
+   - `institute`: Their institution/affiliation
+   - `website`: Their personal website URL
+   - `photo`: Path to their photo (place photos in `public/` folder)
+
+Example:
+```javascript
+{
+  name: "Dr. Your Name",
+  institute: "Your University",
+  website: "https://yourwebsite.com",
+  photo: "/your-photo.jpg"
+}
+```
+
+
+

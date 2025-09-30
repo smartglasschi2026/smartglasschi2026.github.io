@@ -40,3 +40,45 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Organizers Section Styles */
+.organizer-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.organizer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.organizer-photo {
+  transition: transform 0.2s ease;
+}
+
+.organizer-card:hover .organizer-photo {
+  transform: scale(1.05);
+}
+
+.organizer-website {
+  transition: color 0.2s ease;
+}
+
+.organizer-website:hover {
+  color: #0056b3 !important;
+  text-decoration: underline !important;
+}
+
+/* Responsive design for organizers */
+@media (max-width: 1200px) {
+  .organizers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .organizers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
